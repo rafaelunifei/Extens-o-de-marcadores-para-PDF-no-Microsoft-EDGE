@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF Marcadores</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+
+  <!-- ===== Cabeçalho ===== -->
+  <header>
+    <span class="header-title">📌 PDF Marcadores</span>
+    <button id="btn-add" title="Adicionar marcador manualmente">＋</button>
+  </header>
+
+  <!-- ===== Busca ===== -->
+  <div class="search-wrap">
+    <span class="search-icon">🔎</span>
+    <input
+      id="search"
+      type="text"
+      placeholder="Pesquisar marcadores..."
+      autocomplete="off"
+      spellcheck="false"
+    />
+    <button id="btn-clear-search" class="clear-btn" title="Limpar pesquisa" hidden>✕</button>
+  </div>
+
+  <!-- ===== Lista de marcadores ===== -->
+  <main id="list-container">
+    <p class="empty-msg" id="empty-msg">Nenhum marcador ainda.<br>Selecione um trecho no PDF, clique com o botão direito e escolha <strong>Adicionar marcador</strong>.</p>
+  </main>
+
+  <!-- ===== Rodapé ===== -->
+  <footer id="footer-count"></footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

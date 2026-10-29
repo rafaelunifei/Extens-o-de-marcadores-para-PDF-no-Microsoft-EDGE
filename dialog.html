@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF Marcadores</title>
+  <link rel="stylesheet" href="dialog.css" />
+</head>
+<body>
+
+  <header>
+    <h1 id="dialog-header">NOVO MARCADOR</h1>
+  </header>
+
+  <form id="bookmark-form" novalidate>
+
+    <!-- Título: único campo editável por padrão -->
+    <div class="field">
+      <label for="f-title">Título <span class="required">*</span></label>
+      <input
+        id="f-title"
+        type="text"
+        placeholder="Ex: Resposta em frequência — definição"
+        maxlength="200"
+        autocomplete="off"
+        spellcheck="true"
+        required
+      />
+      <span class="field-error" id="err-title" hidden>Informe um título.</span>
+    </div>
+
+    <!-- Arquivo: Somente leitura -->
+    <div class="field">
+      <label>Arquivo</label>
+      <div class="readonly-box" id="val-arquivo">—</div>
+    </div>
+
+    <!-- Página: Somente leitura quando detectada, ou campo simples quando não disponível -->
+    <div class="field">
+      <label for="f-page">Página <span class="required" id="page-req-star" hidden>*</span></label>
+      
+      <!-- Se detectada automaticamente (somente leitura) -->
+      <div class="readonly-box" id="val-pagina" hidden>—</div>
+      
+      <!-- Se não detectada (fallback para preenchimento rápido) -->
+      <div id="page-input-wrap">
+        <input
+          id="f-page"
+          type="number"
+          placeholder="Ex: 377"
+          min="1"
+          max="99999"
+        />
+        <span class="field-error" id="err-page" hidden>Número de página inválido.</span>
+      </div>
+    </div>
+
+    <!-- Trecho: Texto selecionado ou aviso de indisponibilidade nativa do Edge -->
+    <div class="field">
+      <label>Trecho</label>
+      <div class="readonly-box excerpt-box" id="val-trecho">—</div>
+    </div>
+
+    <!-- Botões -->
+    <div class="btn-row">
+      <button type="button" id="btn-cancel" class="btn-secondary">CANCELAR</button>
+      <button type="submit" id="btn-save" class="btn-primary">SALVAR</button>
+    </div>
+
+  </form>
+
+  <script src="dialog.js"></script>
+</body>
+</html>
